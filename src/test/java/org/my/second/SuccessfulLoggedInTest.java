@@ -2,11 +2,10 @@ package org.my.second;
 
 import org.junit.Test;
 import org.my.MainPage;
-import org.my.LoggedInTimerPage;
 
 import static org.junit.Assert.assertTrue;
 
-public class LoggedInTimerTest extends BaseUITest {
+public class SuccessfulLoggedInTest extends BaseUITest {
 
 	@Test
 	public void checkSuccessfulLoggedIn() {
