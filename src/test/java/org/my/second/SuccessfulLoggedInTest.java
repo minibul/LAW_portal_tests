@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 public class SuccessfulLoggedInTest extends BaseUITest {
 
+
 	@Test
 	public void checkSuccessfulLoggedIn() {
 		boolean loggedInShowTimer = new MainPage(driver)
@@ -15,6 +16,7 @@ public class SuccessfulLoggedInTest extends BaseUITest {
 				.enterPassword("111111111")
 				.clickLoginButton()
 				.loggedInShowTimer();
+
 
 		assertTrue("Failed to login", loggedInShowTimer);
 

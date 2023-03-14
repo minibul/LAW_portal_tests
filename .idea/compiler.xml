@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LAW_portal_tests" />
+        <module name="LAW" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="LAW_portal_tests" target="11" />
+      <module name="yandex_scooter" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
