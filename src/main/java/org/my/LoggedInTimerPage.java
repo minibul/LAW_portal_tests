@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoggedInTimerPage extends BasePage{
 
-	private final By loggedIn = By.className("chakra-text css-1twwkzv");
+	private final By loggedIn = By.xpath(".//h1[@class='chakra-heading css-9lgfe2']");
 
 	public LoggedInTimerPage(WebDriver driver) {
 		super(driver);

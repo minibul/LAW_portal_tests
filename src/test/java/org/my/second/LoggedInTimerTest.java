@@ -13,14 +13,14 @@ public class LoggedInTimerTest extends BaseUITest {
 		boolean loggedInShowTimer = new MainPage(driver)
 				.open()
 				.enterEmail("anton.bondarev@sabregames.com")
-				.enterPassword("")
+				.enterPassword("111111111")
 				.clickLoginButton()
 				.loggedInShowTimer();
-
-
 
 		assertTrue("Failed to login", loggedInShowTimer);
 
 	}
+
+
 }
 

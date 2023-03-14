@@ -9,5 +9,8 @@
         <module name="LAW_portal_tests" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="LAW_portal_tests" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
