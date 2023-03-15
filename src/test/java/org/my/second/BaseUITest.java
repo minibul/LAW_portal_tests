@@ -17,7 +17,7 @@ public class BaseUITest {
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 	}
 

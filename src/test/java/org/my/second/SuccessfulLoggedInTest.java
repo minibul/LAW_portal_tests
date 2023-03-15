@@ -10,7 +10,7 @@ public class SuccessfulLoggedInTest extends BaseUITest {
 
 	@Test
 	public void checkSuccessfulLoggedIn() {
-		boolean loggedInShowTimer = new MainPage(driver)
+		boolean isLoggedInSuccessful = new MainPage(driver)
 				.open()
 				.enterEmail("anton.bondarev@sabregames.com")
 				.enterPassword("111111111")
@@ -18,7 +18,7 @@ public class SuccessfulLoggedInTest extends BaseUITest {
 				.loggedInShowTimer();
 
 
-		assertTrue("Failed to login", loggedInShowTimer);
+		assertTrue("Failed to login", isLoggedInSuccessful);
 
 	}
 
