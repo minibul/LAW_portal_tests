@@ -17,25 +17,36 @@ public class MainPage extends BasePage{
 		super(driver);
 	}
 
-	public LoggedInTimerPage clickLoginButton() {
+	public SuccessfulAndUnsuccessfulLogin clickLoginButton() {
 		driver.findElement(loginButton).click();
-		return new LoggedInTimerPage(driver);
+		return new SuccessfulAndUnsuccessfulLogin(driver);
 	}
+
+	public SuccessfulAndUnsuccessfulLogin unsuccessfulClickLoginButton() {
+		driver.findElement(loginButton).click();
+		return new SuccessfulAndUnsuccessfulLogin(driver);
+	}
+
 	public MainPage clickRegistrationTab() {
 		driver.findElement(registrationTab).click();
 		return this;
 	}
 
-	public LoggedInTimerPage clickRegisterButton() {
+	public SuccessfulAndUnsuccessfulLogin clickRegisterButton() {
 		driver.findElement(RegisterButton).click();
-		return new LoggedInTimerPage(driver);
+		return new SuccessfulAndUnsuccessfulLogin(driver);
+	}
+
+	public MainPage enterLogin(String enterLogin) {
+		driver.findElement(loginInput).sendKeys(enterLogin);
+		return this;
 	}
 	public MainPage enterEmail(String enterEmail) {
 		driver.findElement(emailInput).sendKeys(enterEmail);
 		return this;
 	}
 
-	public MainPage enterLogin(int minLength, int maxLength) {
+	public MainPage enterRandomLogin(int minLength, int maxLength) {
 		GenerateRandomLoginEmailPassword generateRandomLoginEmailPassword = new GenerateRandomLoginEmailPassword(driver);
 		String login = generateRandomLoginEmailPassword.generateRandomLogin(minLength, maxLength);
 		driver.findElement(loginInput).sendKeys(login);
@@ -48,6 +59,7 @@ public class MainPage extends BasePage{
 		driver.findElement(emailInput).sendKeys(email);
 		return this;
 	}
+
 	public MainPage enterRandomPassword(int minLength) {
 		GenerateRandomLoginEmailPassword generateRandomLoginEmailPassword = new GenerateRandomLoginEmailPassword(driver);
 		String password = generateRandomLoginEmailPassword.generateRandomPassword(minLength);

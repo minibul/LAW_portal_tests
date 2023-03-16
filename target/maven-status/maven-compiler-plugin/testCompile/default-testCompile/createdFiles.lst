@@ -1,0 +1,4 @@
+org\my\second\BaseUITest.class
+org\my\second\SuccessfulLoggedInTest.class
+org\my\second\SuccessfulRegisterNewUserTest.class
+org\my\second\UnsuccessfulNewRegistrationTest.class
