@@ -2,10 +2,9 @@ package org.my.second;
 
 import org.junit.Test;
 import org.my.MainPage;
-
 import static org.junit.Assert.assertTrue;
 
-public class SuccessfulRegisterNewUserTest extends BaseUITest {
+public class SuccessfulRegisterNewUserTests extends BaseUITest {
 
     @Test
     public void checkSuccessfulRegistration() {
