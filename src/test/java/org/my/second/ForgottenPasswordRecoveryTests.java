@@ -8,17 +8,17 @@ public class ForgottenPasswordRecoveryTests extends BaseUITest {
 
 	@Test
 	public void SuccessfulSendRecoveryPassword() {
-		boolean isSendRecoveryPasswordSuccessful = new MainPage(driver)
+		boolean isMainPageDisplayed = new MainPage(driver)
 				.open()
 				.clickForgotPassword()
 				.enterEmailForResetPassword("avbondarev04@gmail.com")
 				.clickResetPasswordSendButton()
-				.showPasswordRecovery();
+				.clickLoginButtonAfterRecoveryPassword()
+				.showMainPageAfterPasswordRecovery();
 
-		assertTrue("Failed to recovery password", isSendRecoveryPasswordSuccessful);
-
-
+		assertTrue("Failed to recovery password", isMainPageDisplayed);
 	}
+
 	@Test
 	public void SuccessfulSendRecoveryPasswordMailDoesNotExist() {
 		boolean isSendRecoveryPasswordSuccessful = new MainPage(driver)
@@ -33,5 +33,18 @@ public class ForgottenPasswordRecoveryTests extends BaseUITest {
 
 	}
 
+	@Test
+	public void UnsuccessfulSendRecoveryPasswordInvalidEmail() {
+		boolean isSendRecoveryPasswordSuccessful = new MainPage(driver)
+				.open()
+				.clickForgotPassword()
+				.enterEmailForResetPassword("avbo04@jcom")
+				.clickResetPasswordSendButton()
+				.showInvalidPasswordRecovery();
+
+		assertTrue("Failed to recovery password", isSendRecoveryPasswordSuccessful);
+
+
+	}
 
 }
