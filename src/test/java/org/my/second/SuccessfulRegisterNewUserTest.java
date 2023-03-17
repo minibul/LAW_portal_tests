@@ -8,12 +8,12 @@ import static org.junit.Assert.assertTrue;
 public class SuccessfulRegisterNewUserTest extends BaseUITest {
 
     @Test
-    public void checkSuccessfulLoggedIn() {
+    public void checkSuccessfulRegistration() {
         boolean isRegistrationSuccessful = new MainPage(driver)
                 .open()
                 .clickRegistrationTab()
-                .enterLogin(3, 12)
-                .enterRandomEmail("d.d.com", 20)
+                .enterRandomLogin(3, 12)
+                .enterRandomEmail("test.com", 10)
                 .enterRandomPassword(8)
                 .clickRegisterButton()
                 .loggedInShowTimer();
