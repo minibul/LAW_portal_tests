@@ -3,12 +3,10 @@ package org.my.second;
 import org.junit.Test;
 import org.my.MainPage;
 import org.my.SuccessfulAndUnsuccessfulLogin;
-
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.assertTrue;
 
-public class UnsuccessfulNewRegistrationTest extends BaseUITest {
+public class UnsuccessfulNewRegistrationTests extends BaseUITest {
 
 	@Test
 	public void InputNicknameMore16Symbols() throws InterruptedException {
@@ -63,6 +61,7 @@ public class UnsuccessfulNewRegistrationTest extends BaseUITest {
 
 		assertTrue("Register should be unsuccessful", isRegistrationUnsuccessful);
 	}
+
 	@Test
 	public void InputNicknameInvalidHieroglyphsSymbols() throws InterruptedException {
 		SuccessfulAndUnsuccessfulLogin successfulAndUnsuccessfulLogin = new MainPage(driver)
@@ -98,6 +97,7 @@ public class UnsuccessfulNewRegistrationTest extends BaseUITest {
 
 		assertTrue("Register should be unsuccessful", isRegistrationUnsuccessful);
 	}
+
 	@Test
 	public void InputNicknameInvalidTwoSpacesAtTheBeginning() throws InterruptedException {
 		SuccessfulAndUnsuccessfulLogin successfulAndUnsuccessfulLogin = new MainPage(driver)
@@ -116,8 +116,6 @@ public class UnsuccessfulNewRegistrationTest extends BaseUITest {
 		assertTrue("Register should be unsuccessful", isRegistrationUnsuccessful);
 	}
 
-
-
 	@Test //here is a bug, we do not show an error that you cannot enter more than one space in nickname(16.03.2023)
 	public void InputNicknameInvalidTwoSpacesAtTheEnd() throws InterruptedException {
 		SuccessfulAndUnsuccessfulLogin successfulAndUnsuccessfulLogin = new MainPage(driver)
@@ -135,6 +133,7 @@ public class UnsuccessfulNewRegistrationTest extends BaseUITest {
 
 		assertTrue("Register should be unsuccessful", isRegistrationUnsuccessful);
 	}
+
 	@Test
 	public void InputEmptyNickname() throws InterruptedException {
 		SuccessfulAndUnsuccessfulLogin successfulAndUnsuccessfulLogin = new MainPage(driver)
@@ -152,6 +151,7 @@ public class UnsuccessfulNewRegistrationTest extends BaseUITest {
 
 		assertTrue("Register should be unsuccessful", isRegistrationUnsuccessful);
 	}
+
 	@Test
 	public void EnteringAnExistingNickname() throws InterruptedException {
 		SuccessfulAndUnsuccessfulLogin successfulAndUnsuccessfulLogin = new MainPage(driver)

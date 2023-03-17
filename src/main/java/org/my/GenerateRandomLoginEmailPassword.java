@@ -1,7 +1,6 @@
 package org.my;
 
 import org.openqa.selenium.WebDriver;
-
 import java.util.Random;
 
 public class GenerateRandomLoginEmailPassword extends BasePage {

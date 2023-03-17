@@ -5,7 +5,7 @@ import org.my.MainPage;
 
 import static org.junit.Assert.assertTrue;
 
-public class SuccessfulLoggedInTest extends BaseUITest {
+public class LoggedInTests extends BaseUITest {
 
 	@Test
 	public void checkSuccessfulLoggedIn() {
