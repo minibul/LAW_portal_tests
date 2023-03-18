@@ -50,6 +50,30 @@ public class ChangePasswordTests extends BaseUITest {
 				.enterCurrentPasswordInput("222222222")
 				.enterNewPassword("111111111")
 				.enterConfirmNewPasswordInput("111111111")
+				.clickConfirmChangePasswordButton()
+				.clickLoginButtonAfterRecoveryPassword()
+				.showMainPageAfterPasswordRecovery();
+
+		assertTrue("Failed to recovery password", isChangePasswordSuccessful);
+	}
+
+	@Test
+	public void CheckingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
+		SuccessfulAndUnsuccessfulLogin successfulLogin = new MainPage(driver)
+				.open()
+				.enterEmail("anton.bondarev@sabregames.com")
+				.enterPassword("111111111")
+				.clickLoginButton();
+
+		TimeUnit.SECONDS.sleep(5);
+
+		boolean isChangePasswordSuccessful = successfulLogin
+				.clickMenuButton()
+				.clickChangePasswordButton()
+				.enterCurrentPasswordInput("111111111")
+				.enterNewPassword("222222222")
+				.enterConfirmNewPasswordInput("222222222")
+				.clickConfirmChangePasswordButton()
 				.clickLoginButtonAfterRecoveryPassword()
 				.showMainPageAfterPasswordRecovery();
 

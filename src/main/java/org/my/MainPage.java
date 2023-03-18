@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 public class MainPage extends BasePage{
 
 	public static final String URL = "https://stg-portal.legendsatwar.io/login";
+
 	private final By loginButton = By.xpath(".//button[@class='chakra-button css-g8bpku']");
-	private final By changePasswordButtonButton = By.xpath(".//button[@class='chakra-button css-1lhrl23']");
+	private final By confirmChangePasswordButton = By.xpath(".//button[@class='chakra-button css-1lhrl23']");
 	private final By changePasswordButton = By.xpath(".//p[@class='chakra-text css-i1mhp8']");
-	private final By loginButtonAfterChangePassword = By.xpath(".//div[@class='css-9nes4l']");
 	private final By mainPage = By.xpath(".//p[@class='chakra-text css-1c4puky']");
 	private final By resetPasswordSendButton = By.xpath(".//button[@class='chakra-button css-lde9c0']");
 	private final By registerButton = By.xpath(".//button[@class='chakra-button css-g8bpku']");
@@ -37,12 +37,14 @@ public class MainPage extends BasePage{
 		driver.findElement(registrationTab).click();
 		return this;
 	}
-	public MainPage clickChangePasswordButton() {
-		driver.findElement(changePasswordButton).click();
+
+	public MainPage clickConfirmChangePasswordButton() {
+		driver.findElement(confirmChangePasswordButton).click();
 		return new MainPage(driver);
 	}
-	public MainPage clickLoginButtonAfterChangePassword() {
-		driver.findElement(loginButtonAfterChangePassword).click();
+
+	public MainPage clickChangePasswordButton() {
+		driver.findElement(changePasswordButton).click();
 		return new MainPage(driver);
 	}
 

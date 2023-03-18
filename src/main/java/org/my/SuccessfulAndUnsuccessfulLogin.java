@@ -12,6 +12,7 @@ public class SuccessfulAndUnsuccessfulLogin extends BasePage{
 	private final By loginButtonAfterRecoveryPassword = By.xpath(".//div[@class='css-9nes4l']");
 	private final By menuButton = By.xpath(".//div[@class='css-1jrg5dv']");
 	private final By mainPage = By.xpath(".//p[@class='chakra-text css-1c4puky']");
+
 	public SuccessfulAndUnsuccessfulLogin(WebDriver driver) {
 		super(driver);
 	}
