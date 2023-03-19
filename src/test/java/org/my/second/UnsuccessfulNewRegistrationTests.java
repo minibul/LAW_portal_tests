@@ -1,11 +1,11 @@
 package org.my.second;
 
+
 import org.junit.Test;
 import org.my.MainPage;
 import org.my.SuccessfulAndUnsuccessfulLogin;
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertTrue;
-
 public class UnsuccessfulNewRegistrationTests extends BaseUITest {
 
 	@Test
