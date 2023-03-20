@@ -1,7 +1,7 @@
-package org.my.second;
+package org.my;
 
 import org.junit.Test;
-import org.my.MainPage;
+
 import static org.junit.Assert.assertTrue;
 
 public class ForgottenPasswordRecoveryTests extends BaseUITest {
