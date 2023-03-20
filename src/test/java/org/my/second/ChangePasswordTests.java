@@ -1,15 +1,18 @@
 package org.my.second;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.my.MainPage;
 import org.my.SuccessfulAndUnsuccessfulLogin;
 import static org.junit.Assert.assertTrue;
 import java.util.concurrent.TimeUnit;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ChangePasswordTests extends BaseUITest {
 
 	@Test
-	public void successfulChangePassword() throws InterruptedException {
+	public void test_1successfulChangePassword() throws InterruptedException {
 		MainPage mainPage = new MainPage(driver);
 		SuccessfulAndUnsuccessfulLogin successfulLogin = mainPage
 				.open()
@@ -33,7 +36,7 @@ public class ChangePasswordTests extends BaseUITest {
 	}
 
 	@Test
-	public void checkingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
+	public void test_2checkingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
 		MainPage mainPage = new MainPage(driver);
 		SuccessfulAndUnsuccessfulLogin successfulLogin = mainPage
 				.open()

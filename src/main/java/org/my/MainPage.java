@@ -92,22 +92,19 @@ public class MainPage extends BasePage{
 	}
 
 	public MainPage enterRandomLogin(int minLength, int maxLength) {
-		GenerateRandomLoginEmailPassword generateRandomLoginEmailPassword = new GenerateRandomLoginEmailPassword(driver);
-		String login = generateRandomLoginEmailPassword.generateRandomLogin(minLength, maxLength);
+		String login = RandomDataGenerator.generateRandomLogin(minLength, maxLength);
 		driver.findElement(loginInput).sendKeys(login);
 		return this;
 	}
 
 	public MainPage enterRandomEmail(String domain, int localPartLength) {
-		GenerateRandomLoginEmailPassword generateRandomLoginEmailPassword = new GenerateRandomLoginEmailPassword(driver);
-		String email = generateRandomLoginEmailPassword.generateRandomEmail(domain, localPartLength);
+		String email = RandomDataGenerator.generateRandomEmail(domain, localPartLength);
 		driver.findElement(emailInput).sendKeys(email);
 		return this;
 	}
 
 	public MainPage enterRandomPassword(int minLength) {
-		GenerateRandomLoginEmailPassword generateRandomLoginEmailPassword = new GenerateRandomLoginEmailPassword(driver);
-		String password = generateRandomLoginEmailPassword.generateRandomPassword(minLength);
+		String password = RandomDataGenerator.generateRandomPassword(minLength);
 		driver.findElement(passwordInput).sendKeys(password);
 		return this;
 	}
