@@ -17,7 +17,7 @@ public class RandomDataGenerator extends BasePage {
 			instance = new RandomDataGenerator(driver);
 		}
 		return instance;
-	}
+	}//This code implements the Singleton design pattern for the RandomDataGenerator class.
 
 	public static String generateRandomLogin(int minLength, int maxLength) {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ";
@@ -35,7 +35,7 @@ public class RandomDataGenerator extends BasePage {
 	public static String generateRandomEmail(String domain, int localPartLength) {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 		Random random = new Random();
-		StringBuilder sb = new StringBuilder("test_"); // Добавляем слово "test" в начале
+		StringBuilder sb = new StringBuilder("test_");
 		for (int i = 0; i < localPartLength; i++) {
 			int index = random.nextInt(chars.length());
 			sb.append(chars.charAt(index));
