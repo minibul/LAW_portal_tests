@@ -1,15 +1,25 @@
 package org.my;
 
 import org.openqa.selenium.WebDriver;
+
 import java.util.Random;
 
-public class GenerateRandomLoginEmailPassword extends BasePage {
+public class RandomDataGenerator extends BasePage {
 
-	public GenerateRandomLoginEmailPassword(WebDriver driver) {
+	private static RandomDataGenerator instance;
+
+	private RandomDataGenerator(WebDriver driver) {
 		super(driver);
 	}
 
-	public String generateRandomLogin(int minLength, int maxLength) {
+	public static RandomDataGenerator getInstance(WebDriver driver) {
+		if (instance == null) {
+			instance = new RandomDataGenerator(driver);
+		}
+		return instance;
+	}
+
+	public static String generateRandomLogin(int minLength, int maxLength) {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ";
 		Random random = new Random();
 		int length = random.nextInt(maxLength - minLength + 1 - 5) + minLength + 5;
@@ -22,7 +32,7 @@ public class GenerateRandomLoginEmailPassword extends BasePage {
 		return sb.toString();
 	}
 
-	public String generateRandomEmail(String domain, int localPartLength) {
+	public static String generateRandomEmail(String domain, int localPartLength) {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 		Random random = new Random();
 		StringBuilder sb = new StringBuilder("test_"); // Добавляем слово "test" в начале
@@ -34,7 +44,8 @@ public class GenerateRandomLoginEmailPassword extends BasePage {
 		sb.append(domain);
 		return sb.toString();
 	}
-	public String generateRandomPassword(int minLength) {
+
+	public static String generateRandomPassword(int minLength) {
 		if (minLength < 8) {
 			throw new IllegalArgumentException("Password length should be at least 8 characters");
 		}
@@ -51,7 +62,6 @@ public class GenerateRandomLoginEmailPassword extends BasePage {
 		sb.append(lowerCaseChars.charAt(random.nextInt(lowerCaseChars.length())));
 		sb.append(digits.charAt(random.nextInt(digits.length())));
 
-
 		for (int i = 3; i < minLength; i++) {
 			sb.append(allChars.charAt(random.nextInt(allChars.length())));
 		}
@@ -63,5 +73,3 @@ public class GenerateRandomLoginEmailPassword extends BasePage {
 				.toString();
 	}
 }
-
-
