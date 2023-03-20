@@ -1,10 +1,9 @@
-package org.my.second;
+package org.my;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.my.MainPage;
-import org.my.SuccessfulAndUnsuccessfulLogin;
+
 import static org.junit.Assert.assertTrue;
 import java.util.concurrent.TimeUnit;
 
