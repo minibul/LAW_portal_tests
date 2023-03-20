@@ -9,11 +9,12 @@ import java.util.concurrent.TimeUnit;
 public class ChangePasswordTests extends BaseUITest {
 
 	@Test
-	public void checkSuccessfulChangePassword() throws InterruptedException {
-		SuccessfulAndUnsuccessfulLogin successfulLogin = new MainPage(driver)
+	public void successfulChangePassword() throws InterruptedException {
+		MainPage mainPage = new MainPage(driver);
+		SuccessfulAndUnsuccessfulLogin successfulLogin = mainPage
 				.open()
-				.enterEmail("anton.bondarev@sabregames.com")
-				.enterPassword("222222222")
+				.enterEmail(mainPage.getEmail())
+				.enterPassword(mainPage.getOldPassword())
 				.clickLoginButton();
 
 		TimeUnit.SECONDS.sleep(5);
@@ -21,9 +22,9 @@ public class ChangePasswordTests extends BaseUITest {
 		boolean isChangePasswordSuccessful = successfulLogin
 				.clickMenuButton()
 				.clickChangePasswordButton()
-				.enterCurrentPasswordInput("222222222")
-				.enterNewPassword("111111111")
-				.enterConfirmNewPasswordInput("111111111")
+				.enterCurrentPasswordInput(mainPage.getOldPassword())
+				.enterNewPassword(mainPage.getNewPassword())
+				.enterConfirmNewPasswordInput(mainPage.getNewPassword())
 				.clickConfirmChangePasswordButton()
 				.clickLoginButtonAfterRecoveryPassword()
 				.showMainPageAfterPasswordRecovery();
@@ -32,11 +33,12 @@ public class ChangePasswordTests extends BaseUITest {
 	}
 
 	@Test
-	public void CheckingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
-		SuccessfulAndUnsuccessfulLogin successfulLogin = new MainPage(driver)
+	public void checkingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
+		MainPage mainPage = new MainPage(driver);
+		SuccessfulAndUnsuccessfulLogin successfulLogin = mainPage
 				.open()
-				.enterEmail("anton.bondarev@sabregames.com")
-				.enterPassword("111111111")
+				.enterEmail(mainPage.getEmail())
+				.enterPassword(mainPage.getNewPassword())
 				.clickLoginButton();
 
 		TimeUnit.SECONDS.sleep(5);
@@ -44,9 +46,9 @@ public class ChangePasswordTests extends BaseUITest {
 		boolean isChangePasswordSuccessful = successfulLogin
 				.clickMenuButton()
 				.clickChangePasswordButton()
-				.enterCurrentPasswordInput("111111111")
-				.enterNewPassword("222222222")
-				.enterConfirmNewPasswordInput("222222222")
+				.enterCurrentPasswordInput(mainPage.getNewPassword())
+				.enterNewPassword(mainPage.getOldPassword())
+				.enterConfirmNewPasswordInput(mainPage.getOldPassword())
 				.clickConfirmChangePasswordButton()
 				.clickLoginButtonAfterRecoveryPassword()
 				.showMainPageAfterPasswordRecovery();

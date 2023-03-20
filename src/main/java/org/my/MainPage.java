@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 public class MainPage extends BasePage{
 
 	public static final String URL = "https://stg-portal.legendsatwar.io/login";
+	public String email = "anton.bondarev@sabregames.com";
+	public String oldPassword = "222222222";
+	public String newPassword = "111111111";
 
 	private final By loginButton = By.xpath(".//button[@class='chakra-button css-g8bpku']");
 	private final By confirmChangePasswordButton = By.xpath(".//button[@class='chakra-button css-1lhrl23']");
@@ -131,5 +134,17 @@ public class MainPage extends BasePage{
 	public MainPage open() {
 		driver.get(URL);
 		return this;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getOldPassword() {
+		return oldPassword;
+	}
+
+	public String getNewPassword() {
+		return newPassword;
 	}
 }

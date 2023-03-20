@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class ForgottenPasswordRecoveryTests extends BaseUITest {
 
 	@Test
-	public void SuccessfulSendRecoveryPassword() {
+	public void successfulSendRecoveryPassword() {
 		boolean isMainPageDisplayed = new MainPage(driver)
 				.open()
 				.clickForgotPassword()
@@ -20,7 +20,7 @@ public class ForgottenPasswordRecoveryTests extends BaseUITest {
 	}
 
 	@Test
-	public void SuccessfulSendRecoveryPasswordMailDoesNotExist() {
+	public void successfulSendRecoveryPasswordMailDoesNotExist() {
 		boolean isSendRecoveryPasswordSuccessful = new MainPage(driver)
 				.open()
 				.clickForgotPassword()
@@ -34,7 +34,7 @@ public class ForgottenPasswordRecoveryTests extends BaseUITest {
 	}
 
 	@Test
-	public void UnsuccessfulSendRecoveryPasswordInvalidEmail() {
+	public void unsuccessfulSendRecoveryPasswordInvalidEmail() {
 		boolean isSendRecoveryPasswordSuccessful = new MainPage(driver)
 				.open()
 				.clickForgotPassword()

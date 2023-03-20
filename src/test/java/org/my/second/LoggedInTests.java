@@ -9,10 +9,12 @@ public class LoggedInTests extends BaseUITest {
 
 	@Test
 	public void checkSuccessfulLoggedIn() {
-		boolean isLoggedInSuccessful = new MainPage(driver)
+		MainPage mainPage = new MainPage(driver);
+
+		boolean isLoggedInSuccessful = mainPage
 				.open()
-				.enterEmail("anton.bondarev@sabregames.com")
-				.enterPassword("111111111")
+				.enterEmail(mainPage.getEmail())
+				.enterPassword(mainPage.getOldPassword())
 				.clickLoginButton()
 				.loggedInShowTimer();
 
