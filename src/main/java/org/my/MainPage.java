@@ -109,12 +109,22 @@ public class MainPage extends BasePage{
 	public boolean showMainPageAfterPasswordRecovery() {
 		return driver.findElement(MainPageLocators.mainPage).isDisplayed();
 	}
+
 	public boolean showGamepediaHomePage() {
 		return driver.findElement(MainPageLocators.gamepediaOpeningConfirmation).isDisplayed();
 	}
 
-	public MainPage clickGamepediaButton() {
-		driver.findElement(MainPageLocators.gamepediaButton).click();
+	public boolean showLeaderboardsHomePage() {
+		return driver.findElement(MainPageLocators.leaderboardsOpeningConfirmation).isDisplayed();
+	}
+
+	public MainPage clickMenuGamepediaButton() {
+		driver.findElement(MainPageLocators.menuGamepediaButton).click();
+		return new MainPage(driver);
+	}
+
+	public MainPage clickMenuLeaderboardsButton() {
+		driver.findElement(MainPageLocators.menuLeaderboardsButton).click();
 		return new MainPage(driver);
 	}
 
