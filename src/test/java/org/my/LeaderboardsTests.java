@@ -24,6 +24,6 @@ public class LeaderboardsTests extends BaseUITest {
                 .clickMenuLeaderboardsButton()
                 .showLeaderboardsHomePage();
 
-        assertTrue("Failed to open gamepedia", isSuccessfulOpenLeaderboards);
+        assertTrue("Failed to open Leaderboards", isSuccessfulOpenLeaderboards);
     }
 }
