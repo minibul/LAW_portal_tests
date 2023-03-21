@@ -3,10 +3,10 @@ package org.my;
 import org.openqa.selenium.WebDriver;
 public class MainPage extends BasePage{
 
-	public static final String URL = "https://stg-portal.legendsatwar.io/login";
-	public String email = "anton.bondarev@sabregames.com";
-	public String oldPassword = "222222222";
-	public String newPassword = "111111111";
+	public static final String URL = Configuration.getProperty("url");
+	public String email = Configuration.getProperty("email");
+	public String oldPassword = Configuration.getProperty("oldPassword");
+	public String newPassword = Configuration.getProperty("newPassword");
 
 
 	public MainPage(WebDriver driver) {
