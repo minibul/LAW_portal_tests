@@ -11,7 +11,7 @@ public class GamepediaTests extends BaseUITest {
     @Test
     public void successfulOpenGamepediaTest() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
-        SuccessfulAndUnsuccessfulLogin successfulChangePassword = mainPage
+        SuccessfulAndUnsuccessfulLogin successfulOpenGamepediaTest = mainPage
                 .open()
                 .enterEmail(mainPage.getEmail())
                 .enterPassword(mainPage.getOldPassword())
@@ -19,11 +19,11 @@ public class GamepediaTests extends BaseUITest {
 
         TimeUnit.SECONDS.sleep(5);
 
-        boolean isOpenGamepediaSuccessful = successfulChangePassword
+        boolean isOpenGamepediaTestSuccessful = successfulOpenGamepediaTest
                 .clickMenuButton()
-                .clickGamepediaButton()
+                .clickMenuGamepediaButton()
                 .showGamepediaHomePage();
 
-        assertTrue("Failed to open gamepedia", isOpenGamepediaSuccessful);
+        assertTrue("Failed to open leaderboards", isOpenGamepediaTestSuccessful);
     }
 }
