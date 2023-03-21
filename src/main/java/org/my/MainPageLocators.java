@@ -24,5 +24,7 @@ public class MainPageLocators {
     static final By passwordRecovery = By.xpath(".//p[@class='chakra-text css-1c4puky']");
     static final By invalidPasswordRecovery = By.xpath(".//div[@class='chakra-form__error-message css-105qply']");
     static final By menuButton = By.xpath(".//div[@class='css-1jrg5dv']");
+    static final By gamepediaButton = By.xpath(".//p[@class='chakra-text css-1yuqmmm' and text()='Gamepedia']");
+    static final By gamepediaOpeningConfirmation = By.xpath(".//button[@class='chakra-menu__menu-button css-k7jkx0']");
 
 }

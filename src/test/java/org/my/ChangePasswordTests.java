@@ -13,7 +13,7 @@ public class ChangePasswordTests extends BaseUITest {
 	@Test
 	public void test_1successfulChangePassword() throws InterruptedException {
 		MainPage mainPage = new MainPage(driver);
-		SuccessfulAndUnsuccessfulLogin successfulLogin = mainPage
+		SuccessfulAndUnsuccessfulLogin successfulChangePassword = mainPage
 				.open()
 				.enterEmail(mainPage.getEmail())
 				.enterPassword(mainPage.getOldPassword())
@@ -21,7 +21,7 @@ public class ChangePasswordTests extends BaseUITest {
 
 		TimeUnit.SECONDS.sleep(5);
 
-		boolean isChangePasswordSuccessful = successfulLogin
+		boolean isChangePasswordSuccessful = successfulChangePassword
 				.clickMenuButton()
 				.clickChangePasswordButton()
 				.enterCurrentPasswordInput(mainPage.getOldPassword())
@@ -37,7 +37,7 @@ public class ChangePasswordTests extends BaseUITest {
 	@Test
 	public void test_2checkingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
 		MainPage mainPage = new MainPage(driver);
-		SuccessfulAndUnsuccessfulLogin successfulLogin = mainPage
+		SuccessfulAndUnsuccessfulLogin checkingIfThePasswordWasChangedSuccessfully = mainPage
 				.open()
 				.enterEmail(mainPage.getEmail())
 				.enterPassword(mainPage.getNewPassword())
@@ -45,7 +45,7 @@ public class ChangePasswordTests extends BaseUITest {
 
 		TimeUnit.SECONDS.sleep(5);
 
-		boolean isChangePasswordSuccessful = successfulLogin
+		boolean ischeckingIfThePasswordWasChangedSuccessfully = checkingIfThePasswordWasChangedSuccessfully
 				.clickMenuButton()
 				.clickChangePasswordButton()
 				.enterCurrentPasswordInput(mainPage.getNewPassword())
@@ -55,7 +55,7 @@ public class ChangePasswordTests extends BaseUITest {
 				.clickLoginButtonAfterRecoveryPassword()
 				.showMainPageAfterPasswordRecovery();
 
-		assertTrue("Failed to recovery password", isChangePasswordSuccessful);
+		assertTrue("Failed to recovery password", ischeckingIfThePasswordWasChangedSuccessfully);
 	}
 }
 
