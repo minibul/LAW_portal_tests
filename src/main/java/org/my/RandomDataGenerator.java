@@ -6,18 +6,9 @@ import java.util.Random;
 
 public class RandomDataGenerator extends BasePage {
 
-	private static RandomDataGenerator instance;
-
 	private RandomDataGenerator(WebDriver driver) {
 		super(driver);
 	}
-
-	public static RandomDataGenerator getInstance(WebDriver driver) {
-		if (instance == null) {
-			instance = new RandomDataGenerator(driver);
-		}
-		return instance;
-	}//This code implements the Singleton design pattern for the RandomDataGenerator class.
 
 	public static String generateRandomLogin(int minLength, int maxLength) {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ";

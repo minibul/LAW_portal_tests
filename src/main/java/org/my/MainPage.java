@@ -109,6 +109,14 @@ public class MainPage extends BasePage{
 	public boolean showMainPageAfterPasswordRecovery() {
 		return driver.findElement(MainPageLocators.mainPage).isDisplayed();
 	}
+	public boolean showGamepediaHomePage() {
+		return driver.findElement(MainPageLocators.gamepediaOpeningConfirmation).isDisplayed();
+	}
+
+	public MainPage clickGamepediaButton() {
+		driver.findElement(MainPageLocators.gamepediaButton).click();
+		return new MainPage(driver);
+	}
 
 	public MainPage open() {
 		driver.get(URL);

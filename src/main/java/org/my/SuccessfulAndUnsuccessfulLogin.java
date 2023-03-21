@@ -32,5 +32,4 @@ public class SuccessfulAndUnsuccessfulLogin extends BasePage{
 		return driver.findElement(MainPageLocators.mainPage).isDisplayed();
 	}
 
-
 }
