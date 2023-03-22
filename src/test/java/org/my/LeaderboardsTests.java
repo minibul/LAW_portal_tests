@@ -1,15 +1,14 @@
 package org.my;
 
 import org.junit.Test;
-
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertTrue;
 
 public class LeaderboardsTests extends BaseUITest {
 
     @Test
-    public void successfulOpenLeaderboards() throws InterruptedException {
+    public void successfulOpenLeaderboards() {
         MainPage mainPage = new MainPage(driver);
         SuccessfulAndUnsuccessfulLogin successfulOpenLeaderboards = mainPage
                 .open()
@@ -17,9 +16,10 @@ public class LeaderboardsTests extends BaseUITest {
                 .enterPassword(mainPage.getOldPassword())
                 .clickLoginButton();
 
-        TimeUnit.SECONDS.sleep(5);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         boolean isSuccessfulOpenLeaderboards = successfulOpenLeaderboards
+                .waitForElement(wait, MainPageLocators.loggedIn)
                 .clickMenuButton()
                 .clickMenuLeaderboardsButton()
                 .showLeaderboardsHomePage();

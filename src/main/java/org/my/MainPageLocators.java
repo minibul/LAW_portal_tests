@@ -19,7 +19,7 @@ public class MainPageLocators {
     static final By loginInput = By.xpath(".//input[@class='chakra-input css-dovvw3']");
     static final By forgotPassword = By.xpath("//a[contains(@href, 'password-recovery')]");
     static final By loginButtonAfterRecoveryPassword = By.xpath(".//div[@class='css-9nes4l']");
-    static final By loggedIn = By.xpath(".//h1[@class='chakra-heading css-9lgfe2']");
+    public static final By loggedIn = By.xpath(".//h1[@class='chakra-heading css-9lgfe2']");
     static final By invalidLogin = By.xpath(".//button[@class='chakra-button css-g8bpku']");
     static final By passwordRecovery = By.xpath(".//p[@class='chakra-text css-1c4puky']");
     static final By invalidPasswordRecovery = By.xpath(".//div[@class='chakra-form__error-message css-105qply']");

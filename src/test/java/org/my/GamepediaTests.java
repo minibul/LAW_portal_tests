@@ -1,15 +1,15 @@
 package org.my;
 
 import org.junit.Test;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
 public class GamepediaTests extends BaseUITest {
 
     @Test
-    public void successfulOpenGamepediaTest() throws InterruptedException {
+    public void successfulOpenGamepediaTest() {
         MainPage mainPage = new MainPage(driver);
         SuccessfulAndUnsuccessfulLogin successfulOpenGamepediaTest = mainPage
                 .open()
@@ -17,9 +17,10 @@ public class GamepediaTests extends BaseUITest {
                 .enterPassword(mainPage.getOldPassword())
                 .clickLoginButton();
 
-        TimeUnit.SECONDS.sleep(5);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         boolean isOpenGamepediaTestSuccessful = successfulOpenGamepediaTest
+                .waitForElement(wait, MainPageLocators.loggedIn)
                 .clickMenuButton()
                 .clickMenuGamepediaButton()
                 .showGamepediaHomePage();

@@ -1,6 +1,9 @@
 package org.my;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SuccessfulAndUnsuccessfulLogin extends BasePage{
 
@@ -31,5 +34,10 @@ public class SuccessfulAndUnsuccessfulLogin extends BasePage{
 	public boolean showMainPageAfterPasswordRecovery() {
 		return driver.findElement(MainPageLocators.mainPage).isDisplayed();
 	}
+	public SuccessfulAndUnsuccessfulLogin waitForElement(WebDriverWait wait, By locator) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		return this;
+	}
+
 
 }

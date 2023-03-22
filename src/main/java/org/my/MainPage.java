@@ -1,6 +1,7 @@
 package org.my;
 
 import org.openqa.selenium.WebDriver;
+
 public class MainPage extends BasePage{
 
 	public static final String URL = Configuration.getProperty("url");
@@ -144,4 +145,5 @@ public class MainPage extends BasePage{
 	public String getNewPassword() {
 		return newPassword;
 	}
+
 }
