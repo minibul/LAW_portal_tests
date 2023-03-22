@@ -3,15 +3,15 @@ package org.my;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertTrue;
-import java.util.concurrent.TimeUnit;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ChangePasswordTests extends BaseUITest {
 
 	@Test
-	public void test_1successfulChangePassword() throws InterruptedException {
+	public void test_1successfulChangePassword() {
 		MainPage mainPage = new MainPage(driver);
 		SuccessfulAndUnsuccessfulLogin successfulChangePassword = mainPage
 				.open()
@@ -19,9 +19,10 @@ public class ChangePasswordTests extends BaseUITest {
 				.enterPassword(mainPage.getOldPassword())
 				.clickLoginButton();
 
-		TimeUnit.SECONDS.sleep(5);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		boolean isChangePasswordSuccessful = successfulChangePassword
+				.waitForElement(wait, MainPageLocators.loggedIn)
 				.clickMenuButton()
 				.clickChangePasswordButton()
 				.enterCurrentPasswordInput(mainPage.getOldPassword())
@@ -35,7 +36,7 @@ public class ChangePasswordTests extends BaseUITest {
 	}
 
 	@Test
-	public void test_2checkingIfThePasswordWasChangedSuccessfully() throws InterruptedException {
+	public void test_2checkingIfThePasswordWasChangedSuccessfully() {
 		MainPage mainPage = new MainPage(driver);
 		SuccessfulAndUnsuccessfulLogin checkingIfThePasswordWasChangedSuccessfully = mainPage
 				.open()
@@ -43,9 +44,10 @@ public class ChangePasswordTests extends BaseUITest {
 				.enterPassword(mainPage.getNewPassword())
 				.clickLoginButton();
 
-		TimeUnit.SECONDS.sleep(5);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		boolean ischeckingIfThePasswordWasChangedSuccessfully = checkingIfThePasswordWasChangedSuccessfully
+				.waitForElement(wait, MainPageLocators.loggedIn)
 				.clickMenuButton()
 				.clickChangePasswordButton()
 				.enterCurrentPasswordInput(mainPage.getNewPassword())
