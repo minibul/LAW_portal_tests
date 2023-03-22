@@ -25,4 +25,5 @@ public class BaseUITest {
 	public void tearDown() {
 		driver.quit();
 	}
+
 }
