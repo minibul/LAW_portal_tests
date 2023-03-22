@@ -23,7 +23,6 @@ public class MainPage extends BasePage{
 		driver.findElement(MainPageLocators.registrationTab).click();
 		return this;
 	}
-
 	public MainPage clickConfirmChangePasswordButton() {
 		driver.findElement(MainPageLocators.confirmChangePasswordButton).click();
 		return new MainPage(driver);
@@ -146,4 +145,22 @@ public class MainPage extends BasePage{
 		return newPassword;
 	}
 
+	public boolean showDownloadWindowsButton() {
+		return driver.findElement(MainPageLocators.downloadWindowsButton).isDisplayed();
+	}
+	public boolean showDownloadMacOSButton() {
+		return driver.findElement(MainPageLocators.downloadMacOSButton).isDisplayed();
+	}
+	public boolean showPlayLAWPopUp() {
+		return driver.findElement(MainPageLocators.playLAWPopUp).isDisplayed();
+	}
+	public boolean showDownloadAppStoreButton() {
+		return driver.findElement(MainPageLocators.downloadAppStoreButton).isDisplayed();
+	}
+	public boolean showDownloadGoogleButton() {
+		return driver.findElement(MainPageLocators.downloadGoogleButton).isDisplayed();
+	}
+	public boolean showPlayOnlineButton() {
+		return driver.findElement(MainPageLocators.playOnlineButton).isDisplayed();
+	}
 }

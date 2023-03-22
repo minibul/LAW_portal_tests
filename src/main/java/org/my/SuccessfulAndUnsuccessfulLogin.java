@@ -38,6 +38,10 @@ public class SuccessfulAndUnsuccessfulLogin extends BasePage{
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return this;
 	}
+	public MainPage clickPlayButton() {
+		driver.findElement(MainPageLocators.playButton).click();
+		return new MainPage(driver);
+	}
 
 
 }

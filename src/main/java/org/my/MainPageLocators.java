@@ -28,4 +28,13 @@ public class MainPageLocators {
     static final By gamepediaOpeningConfirmation = By.xpath(".//button[@class='chakra-menu__menu-button css-k7jkx0']");
     static final By menuLeaderboardsButton = By.xpath(".//p[@class='chakra-text css-1yuqmmm' and text()='Leaderboards']");
     static final By leaderboardsOpeningConfirmation = By.xpath(".//div[@class='chakra-select__wrapper css-t7fkg9']");
+    static final By playButton = By.cssSelector("img[src*='Play_Button.png']");
+    static final By playLAWPopUp = By.xpath(".//div[@class='chakra-modal__body css-l19c9p']");
+    static final By playOnlineButton = By.cssSelector("img[alt='Play_Online'].css-xth51");
+    static final By downloadAppStoreButton = By.cssSelector("img[alt='Download_Appstore'].css-xth51");
+    static final By downloadGoogleButton = By.cssSelector("img[alt='Download_Google'].css-xth51");
+    static final By downloadWindowsButton = By.cssSelector("img[alt='Windows'].css-xth51");
+    static final By downloadMacOSButton = By.cssSelector("img[alt='MacOS'].css-xth51");
+
+
 }
