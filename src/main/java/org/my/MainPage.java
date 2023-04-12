@@ -15,116 +15,116 @@ public class MainPage extends BasePage{
 	}
 
 	public SuccessfulAndUnsuccessfulLogin clickLoginButton() {
-		driver.findElement(MainPageLocators.loginButton).click();
+		driver.findElement(Locators.loginButton).click();
 		return new SuccessfulAndUnsuccessfulLogin(driver);
 	}
 
 	public MainPage clickRegistrationTab() {
-		driver.findElement(MainPageLocators.registrationTab).click();
+		driver.findElement(Locators.registrationTab).click();
 		return this;
 	}
 	public MainPage clickConfirmChangePasswordButton() {
-		driver.findElement(MainPageLocators.confirmChangePasswordButton).click();
+		driver.findElement(Locators.confirmChangePasswordButton).click();
 		return new MainPage(driver);
 	}
 
 	public MainPage clickChangePasswordButton() {
-		driver.findElement(MainPageLocators.changePasswordButton).click();
+		driver.findElement(Locators.changePasswordButton).click();
 		return new MainPage(driver);
 	}
 
 	public MainPage clickForgotPassword() {
-		driver.findElement(MainPageLocators.forgotPassword).click();
+		driver.findElement(Locators.forgotPassword).click();
 		return this;
 	}
 
 	public SuccessfulAndUnsuccessfulLogin clickRegisterButton() {
-		driver.findElement(MainPageLocators.registerButton).click();
+		driver.findElement(Locators.registerButton).click();
 		return new SuccessfulAndUnsuccessfulLogin(driver);
 	}
 
 	public MainPage enterLogin(String enterLogin) {
-		driver.findElement(MainPageLocators.loginInput).sendKeys(enterLogin);
+		driver.findElement(Locators.loginInput).sendKeys(enterLogin);
 		return this;
 	}
 
 	public MainPage enterNewPassword(String enterNewPassword) {
-		driver.findElement(MainPageLocators.newPasswordInput).sendKeys(enterNewPassword);
+		driver.findElement(Locators.newPasswordInput).sendKeys(enterNewPassword);
 		return this;
 	}
 
 	public MainPage enterConfirmNewPasswordInput(String enterConfirmNewPasswordInput) {
-		driver.findElement(MainPageLocators.confirmNewPasswordInput).sendKeys(enterConfirmNewPasswordInput);
+		driver.findElement(Locators.confirmNewPasswordInput).sendKeys(enterConfirmNewPasswordInput);
 		return this;
 	}
 
 	public MainPage enterCurrentPasswordInput(String enterCurrentPasswordInput) {
-		driver.findElement(MainPageLocators.currentPasswordInput).sendKeys(enterCurrentPasswordInput);
+		driver.findElement(Locators.currentPasswordInput).sendKeys(enterCurrentPasswordInput);
 		return this;
 	}
 
 	public MainPage enterEmailForResetPassword(String enterEmail) {
-		driver.findElement(MainPageLocators.emailResetPasswordInput).sendKeys(enterEmail);
+		driver.findElement(Locators.emailResetPasswordInput).sendKeys(enterEmail);
 		return this;
 	}
 
 	public MainPage enterEmail(String enterEmail) {
-		driver.findElement(MainPageLocators.emailInput).sendKeys(enterEmail);
+		driver.findElement(Locators.emailInput).sendKeys(enterEmail);
 		return this;
 	}
 
 	public MainPage enterRandomLogin(int minLength, int maxLength) {
 		String login = RandomDataGenerator.generateRandomLogin(minLength, maxLength);
-		driver.findElement(MainPageLocators.loginInput).sendKeys(login);
+		driver.findElement(Locators.loginInput).sendKeys(login);
 		return this;
 	}
 
 	public MainPage enterRandomEmail(String domain, int localPartLength) {
 		String email = RandomDataGenerator.generateRandomEmail(domain, localPartLength);
-		driver.findElement(MainPageLocators.emailInput).sendKeys(email);
+		driver.findElement(Locators.emailInput).sendKeys(email);
 		return this;
 	}
 
 	public MainPage enterRandomPassword(int minLength) {
 		String password = RandomDataGenerator.generateRandomPassword(minLength);
-		driver.findElement(MainPageLocators.passwordInput).sendKeys(password);
+		driver.findElement(Locators.passwordInput).sendKeys(password);
 		return this;
 	}
 
 	public MainPage enterPassword(String enterPassword) {
-		driver.findElement(MainPageLocators.passwordInput).sendKeys(enterPassword);
+		driver.findElement(Locators.passwordInput).sendKeys(enterPassword);
 		return this;
 	}
 
 	public SuccessfulAndUnsuccessfulLogin clickLoginButtonAfterRecoveryPassword() {
-		driver.findElement(MainPageLocators.loginButtonAfterRecoveryPassword).click();
+		driver.findElement(Locators.loginButtonAfterRecoveryPassword).click();
 		return new SuccessfulAndUnsuccessfulLogin(driver);
 	}
 
 	public SuccessfulAndUnsuccessfulLogin clickResetPasswordSendButton() {
-		driver.findElement(MainPageLocators.resetPasswordSendButton).click();
+		driver.findElement(Locators.resetPasswordSendButton).click();
 		return new SuccessfulAndUnsuccessfulLogin(driver);
 	}
 
 	public boolean showMainPageAfterPasswordRecovery() {
-		return driver.findElement(MainPageLocators.mainPage).isDisplayed();
+		return driver.findElement(Locators.mainPage).isDisplayed();
 	}
 
 	public boolean showGamepediaHomePage() {
-		return driver.findElement(MainPageLocators.gamepediaOpeningConfirmation).isDisplayed();
+		return driver.findElement(Locators.gamepediaOpeningConfirmation).isDisplayed();
 	}
 
 	public boolean showLeaderboardsHomePage() {
-		return driver.findElement(MainPageLocators.leaderboardsOpeningConfirmation).isDisplayed();
+		return driver.findElement(Locators.leaderboardsOpeningConfirmation).isDisplayed();
 	}
 
 	public MainPage clickMenuGamepediaButton() {
-		driver.findElement(MainPageLocators.menuGamepediaButton).click();
+		driver.findElement(Locators.menuGamepediaButton).click();
 		return new MainPage(driver);
 	}
 
 	public MainPage clickMenuLeaderboardsButton() {
-		driver.findElement(MainPageLocators.menuLeaderboardsButton).click();
+		driver.findElement(Locators.menuLeaderboardsButton).click();
 		return new MainPage(driver);
 	}
 
@@ -146,21 +146,21 @@ public class MainPage extends BasePage{
 	}
 
 	public boolean showDownloadWindowsButton() {
-		return driver.findElement(MainPageLocators.downloadWindowsButton).isDisplayed();
+		return driver.findElement(Locators.downloadWindowsButton).isDisplayed();
 	}
 	public boolean showDownloadMacOSButton() {
-		return driver.findElement(MainPageLocators.downloadMacOSButton).isDisplayed();
+		return driver.findElement(Locators.downloadMacOSButton).isDisplayed();
 	}
 	public boolean showPlayLAWPopUp() {
-		return driver.findElement(MainPageLocators.playLAWPopUp).isDisplayed();
+		return driver.findElement(Locators.playLAWPopUp).isDisplayed();
 	}
 	public boolean showDownloadAppStoreButton() {
-		return driver.findElement(MainPageLocators.downloadAppStoreButton).isDisplayed();
+		return driver.findElement(Locators.downloadAppStoreButton).isDisplayed();
 	}
 	public boolean showDownloadGoogleButton() {
-		return driver.findElement(MainPageLocators.downloadGoogleButton).isDisplayed();
+		return driver.findElement(Locators.downloadGoogleButton).isDisplayed();
 	}
 	public boolean showPlayOnlineButton() {
-		return driver.findElement(MainPageLocators.playOnlineButton).isDisplayed();
+		return driver.findElement(Locators.playOnlineButton).isDisplayed();
 	}
 }

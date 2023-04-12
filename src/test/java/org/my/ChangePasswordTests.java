@@ -22,7 +22,7 @@ public class ChangePasswordTests extends BaseUITest {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		boolean isChangePasswordSuccessful = successfulChangePassword
-				.waitForElement(wait, MainPageLocators.loggedIn)
+				.waitForElement(wait, Locators.loggedIn)
 				.clickMenuButton()
 				.clickChangePasswordButton()
 				.enterCurrentPasswordInput(mainPage.getOldPassword())
@@ -47,7 +47,7 @@ public class ChangePasswordTests extends BaseUITest {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		boolean ischeckingIfThePasswordWasChangedSuccessfully = checkingIfThePasswordWasChangedSuccessfully
-				.waitForElement(wait, MainPageLocators.loggedIn)
+				.waitForElement(wait, Locators.loggedIn)
 				.clickMenuButton()
 				.clickChangePasswordButton()
 				.enterCurrentPasswordInput(mainPage.getNewPassword())

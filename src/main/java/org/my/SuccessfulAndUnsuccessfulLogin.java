@@ -12,34 +12,34 @@ public class SuccessfulAndUnsuccessfulLogin extends BasePage{
 	}
 
 	public boolean loggedInShowTimer() {
-		return driver.findElement(MainPageLocators.loggedIn).isDisplayed();
+		return driver.findElement(Locators.loggedIn).isDisplayed();
 	}
 	public boolean showErrorInvalidLogin() {
-		return driver.findElement(MainPageLocators.invalidLogin).isDisplayed();
+		return driver.findElement(Locators.invalidLogin).isDisplayed();
 	}
 	public boolean showPasswordRecovery() {
-		return driver.findElement(MainPageLocators.passwordRecovery).isDisplayed();
+		return driver.findElement(Locators.passwordRecovery).isDisplayed();
 	}
 	public boolean showInvalidPasswordRecovery() {
-		return driver.findElement(MainPageLocators.invalidPasswordRecovery).isDisplayed();
+		return driver.findElement(Locators.invalidPasswordRecovery).isDisplayed();
 	}
 	public MainPage clickLoginButtonAfterRecoveryPassword() {
-		driver.findElement(MainPageLocators.loginButtonAfterRecoveryPassword).click();
+		driver.findElement(Locators.loginButtonAfterRecoveryPassword).click();
 		return new MainPage(driver);
 	}
 	public MainPage clickMenuButton() {
-		driver.findElement(MainPageLocators.menuButton).click();
+		driver.findElement(Locators.menuButton).click();
 		return new MainPage(driver);
 	}
 	public boolean showMainPageAfterPasswordRecovery() {
-		return driver.findElement(MainPageLocators.mainPage).isDisplayed();
+		return driver.findElement(Locators.mainPage).isDisplayed();
 	}
 	public SuccessfulAndUnsuccessfulLogin waitForElement(WebDriverWait wait, By locator) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return this;
 	}
 	public MainPage clickPlayButton() {
-		driver.findElement(MainPageLocators.playButton).click();
+		driver.findElement(Locators.playButton).click();
 		return new MainPage(driver);
 	}
 

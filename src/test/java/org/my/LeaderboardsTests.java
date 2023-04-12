@@ -19,7 +19,7 @@ public class LeaderboardsTests extends BaseUITest {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         boolean isSuccessfulOpenLeaderboards = successfulOpenLeaderboards
-                .waitForElement(wait, MainPageLocators.loggedIn)
+                .waitForElement(wait, Locators.loggedIn)
                 .clickMenuButton()
                 .clickMenuLeaderboardsButton()
                 .showLeaderboardsHomePage();

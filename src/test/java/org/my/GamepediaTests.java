@@ -20,7 +20,7 @@ public class GamepediaTests extends BaseUITest {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         boolean isOpenGamepediaTestSuccessful = successfulOpenGamepediaTest
-                .waitForElement(wait, MainPageLocators.loggedIn)
+                .waitForElement(wait, Locators.loggedIn)
                 .clickMenuButton()
                 .clickMenuGamepediaButton()
                 .showGamepediaHomePage();

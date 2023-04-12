@@ -2,7 +2,7 @@ package org.my;
 
 import org.openqa.selenium.By;
 
-public class MainPageLocators {
+public class Locators {
     public static final By loginButton = By.xpath(".//button[@class='chakra-button css-g8bpku']");
     static final By confirmChangePasswordButton = By.xpath(".//button[@class='chakra-button css-1lhrl23']");
     static final By changePasswordButton = By.xpath(".//p[@class='chakra-text css-i1mhp8']");
